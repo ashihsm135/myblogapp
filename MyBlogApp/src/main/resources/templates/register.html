@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>SB Admin - Start Bootstrap Template</title>
+<!-- Bootstrap core CSS-->
+<link href="/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet" />
+<!-- Custom fonts for this template-->
+<link href="/bootstrap/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css" />
+<!-- Custom styles for this template-->
+<link href="/bootstrap/css/sb-admin.css" rel="stylesheet" />
+</head>
+
+<body class="bg-dark">
+	<div class="container">
+		<div class="card card-register mx-auto mt-5">
+			<div class="card-header">Register an Account</div>
+			<div class="card-body">
+				<form id="upload-file-form">
+					<label for="upload-file-input">Chosse Profile :</label> <input
+						id="upload-file-input" type="file" name="uploadfile" accept="*" />
+				</form>
+				<form th:action="@{/user}" th:object="${user}" method="post"
+					id="registration-form">
+					<input type="hidden" name="image" id="image" th:field="*{image}" /><br />
+					<fieldset>
+						<div class="form-group">
+							<div class="form-row">
+								<div class="col-auto my-1">
+									<label class="mr-sm-2" for="inlineFormCustomSelect">Role</label>
+									<select class="custom-select mr-sm-2" name="role" id="role"
+										th:field="*{role}">
+										<option selected="selected" value="0">SELECT</option>
+										<option value="ADMIN">ADMIN</option>
+										<option value="TEACHER">TEACHER</option>
+										<option value="STUDENT">STUDENT</option>
+									</select>
+								</div>
+
+							</div>
+							<div class="form-row">
+								<div class="col-md-6">
+									<label for="exampleInputName">First name</label> <input
+										class="form-control" id="exampleInputName" name="firstName"
+										type="text" aria-describedby="nameHelp"
+										placeholder="Enter first name" th:field="*{firstName}"
+										required="required" />
+								</div>
+								<div class="col-md-6">
+									<label for="exampleInputLastName">Last name</label> <input
+										class="form-control" id="exampleInputLastName" name="lastName"
+										type="text" aria-describedby="nameHelp"
+										placeholder="Enter last name" th:field="*{lastName}"
+										required="required" />
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Email address</label> <input
+								class="form-control" id="exampleInputEmail1" name="email"
+								type="email" aria-describedby="emailHelp"
+								placeholder="Enter email" th:field="*{email}"
+								required="required" />
+						</div>
+						<div class="form-group">
+							<div class="form-row">
+								<div class="col-md-6">
+									<label for="exampleInputPassword1">Password</label> <input
+										class="form-control" id="exampleInputPassword1"
+										name="password" type="password" placeholder="Password"
+										th:field="*{password}" required="required" />
+								</div>
+								<div class="col-md-6">
+									<label for="exampleConfirmPassword">Confirm password</label> <input
+										class="form-control" id="exampleConfirmPassword"
+										name="cnfPassword" type="password"
+										placeholder="Confirm password" th:field="*{cnfPassword}"
+										required="required" />
+								</div>
+							</div>
+						</div>
+						<!-- <a class="btn btn-primary btn-block" href="login.html">Register</a> -->
+						<button type="submit" class="btn btn-primary btn-block">Register</button>
+					</fieldset>
+				</form>
+				<div class="text-center">
+					<a class="d-block small mt-3" th:href="@{/login}">Login Page</a> <a
+						class="d-block small" th:href="@{/forgot-password}">Forgot
+						Password?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Bootstrap core JavaScript-->
+	<script src="/bootstrap/jquery/jquery.min.js"></script>
+	<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Core plugin JavaScript-->
+	<script src="/bootstrap/jquery-easing/jquery.easing.min.js"></script>
+	<script src="/jquery/jquery-3.2.1.min.js"></script>
+	<script src="/bootstrap/validator/bootstrapvalidator.min.js"></script>
+	<script type="text/javascript">
+		$(document)
+				.ready(
+						function() {
+							$('#registration-form')
+									.bootstrapValidator(
+											{
+												// To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+												feedbackIcons : {
+													valid : 'glyphicon glyphicon-ok',
+													invalid : 'glyphicon glyphicon-remove',
+													validating : 'glyphicon glyphicon-refresh'
+												},
+												fields : {
+													firstName : {
+														validators : {
+															stringLength : {
+																min : 3,
+															},
+															notEmpty : {
+																message : 'Please supply your first name'
+															}
+														}
+													},
+													lastName : {
+														validators : {
+															stringLength : {
+																min : 3,
+															},
+															notEmpty : {
+																message : 'Please supply your last name'
+															}
+														}
+													},
+
+													/*   phone: {
+													      validators: {
+													          notEmpty: {
+													              message: 'Please supply your phone number'
+													          },
+													          phone: {
+													              country: 'US',
+													              message: 'Please supply a vaild phone number with area code'
+													          }
+													      }
+													  },
+													  address: {
+													      validators: {
+													           stringLength: {
+													              min: 8,
+													          },
+													          notEmpty: {
+													              message: 'Please supply your street address'
+													          }
+													      }
+													  },
+													  city: {
+													      validators: {
+													           stringLength: {
+													              min: 4,
+													          },
+													          notEmpty: {
+													              message: 'Please supply your city'
+													          }
+													      }
+													  },
+													  state: {
+													      validators: {
+													          notEmpty: {
+													              message: 'Please select your state'
+													          }
+													      }
+													  },
+													  zip: {
+													      validators: {
+													          notEmpty: {
+													              message: 'Please supply your zip code'
+													          },
+													          zipCode: {
+													              country: 'US',
+													              message: 'Please supply a vaild zip code'
+													          }
+													      }
+													  },
+													comment: {
+													      validators: {
+													            stringLength: {
+													              min: 10,
+													              max: 200,
+													              message:'Please enter at least 10 characters and no more than 200'
+													          },
+													          notEmpty: {
+													              message: 'Please supply a description about yourself'
+													          }
+													          }
+													       },	 */
+													email : {
+														validators : {
+															notEmpty : {
+																message : 'Please supply your email address'
+															},
+															emailAddress : {
+																message : 'Please supply a valid email address'
+															}
+														}
+													},
+
+													password : {
+														validators : {
+															identical : {
+																field : 'confirmPassword',
+																message : 'Confirm your password below - type same password please'
+															}
+														}
+													},
+													cnfPassword : {
+														validators : {
+															identical : {
+																field : 'password',
+																message : 'The password and its confirm are not the same'
+															}
+														}
+													},
+
+												}
+											})
+
+									.on(
+											'success.form.bv',
+											function(e) {
+												$('#success_message')
+														.slideDown({
+															opacity : "show"
+														}, "slow") // Do something ...
+												$('#registration-form').data(
+														'bootstrapValidator')
+														.resetForm();
+
+												// Prevent form submission
+												e.preventDefault();
+
+												// Get the form instance
+												var $form = $(e.target);
+
+												// Get the BootstrapValidator instance
+												var bv = $form
+														.data('bootstrapValidator');
+
+												// Use Ajax to submit form data
+												/* $.post($form.attr('action'), $form.serialize(), function(result) {
+												    console.log(result);
+												}, 'json'); */
+											});
+						});
+		
+		
+		// bind the on-change event
+			$(document).ready(function() {
+				$("#upload-file-input").on("change", uploadFile);
+			});
+
+			/**
+			 * Upload the file sending it via Ajax at the Spring Boot server.
+			 */
+			function uploadFile() {
+				$
+						.ajax({
+							url : "/user/uploadFile",
+							type : "POST",
+							data : new FormData($("#upload-file-form")[0]),
+							enctype : 'multipart/form-data',
+							processData : false,
+							contentType : false,
+							cache : false,
+							success : function(data) {
+								//var obj = jQuery.parseJSON(data);
+								 if (data.status_code == "404") {
+									showCommonAlertPopup("File Type Not Allowed. Error Code: "
+											+ obj.status_code
+											+ ", Error Message: "
+											+ obj.error_msg);
+								} else { 
+									$("#image").val(data.new_file_name);
+								}
+
+							},
+							error : function() {
+								// Handle upload error
+								// ...
+							}
+						});
+			} // function 
+	</script>
+
+</body>
+
+</html>

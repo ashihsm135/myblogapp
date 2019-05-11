@@ -1,0 +1,49 @@
+Database description of MyBlogApp
+
+# MongoDB  
+# database  
+   trends
+# Collection
+   users   
+   
+# Document 
+  
+  /* 1 */
+{
+    "_id" : ObjectId("5c3741d7eb0a6e1774d7d389"),
+    "_class" : "com.javasampleapproach.twitterbootstrap.model.User",
+    "firstName" : "MONI",
+    "lastName" : "MISHRA",
+    "email" : "moni@gmail.com",
+    "password" : "$2a$10$Ur.jH03oZqzJA3JU91xl.ef1K/5Ifn9abJdLGquNrR6fIjvFGO26e",
+    "cnfPassword" : "12345",
+    "image" : "GAndE_1547125177856.jpg",
+    "role" : "ADMIN",
+    "isActive" : "Y",
+    "delFlag" : "N",
+    "delReason" : "",
+    "updatedBy" : 0,
+    "roles" : [ 
+        {
+            "$ref" : "role",
+            "$id" : ObjectId("5cd3d0647d803f3acbe6dced")
+        }
+    ]
+}
+
+
+# Collection
+   role 
+   
+# Document 
+
+/* 1 */
+{
+    "_id" : ObjectId("5cd3d0647d803f3acbe6dced"),
+    "role" : "ADMIN"
+}
+
+
+
+  
+     
