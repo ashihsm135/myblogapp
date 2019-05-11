@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"></head>
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+	<!-- Navigation-->
+	<div th:include="fragments/header::LEFT-SIDEBAR"></div>
+	<div class="content-wrapper">
+		<div class="container-fluid">
+			<!-- Breadcrumbs-->
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">Dashboard</a>
+				</li>
+				<li class="breadcrumb-item active">Create Teacher</li>
+			</ol>
+			<!-- <div class="row"> -->
+			<div class="card card-register mx-auto mt-5">
+				<div class="card-header">Register an Account</div>
+				<div class="card-body">
+					<form th:action="@{/teacher}" th:object="${teacher}" method="post"
+						id="registration-form">
+						<fieldset>
+							<div class="form-group">
+								<div class="form-row">
+									<div class="col-md-6">
+										<label for="exampleInputName">First name</label> <input
+											class="form-control" id="exampleInputName" name="firstName"
+											type="text" aria-describedby="nameHelp"
+											placeholder="Enter first name" th:field="*{firstName}"
+											required="required" />
+									</div>
+									<div class="col-md-6">
+										<label for="exampleInputLastName">Last name</label> <input
+											class="form-control" id="exampleInputLastName"
+											name="lastName" type="text" aria-describedby="nameHelp"
+											placeholder="Enter last name" th:field="*{lastName}"
+											required="required" />
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Email address</label> <input
+									class="form-control" id="exampleInputEmail1" name="email"
+									type="email" aria-describedby="emailHelp"
+									placeholder="Enter email" th:field="*{email}"
+									required="required" />
+							</div>
+							<div class="form-group">
+								<div class="form-row">
+									<div class="col-md-6">
+										<label for="exampleInputPassword1">Password</label> <input
+											class="form-control" id="exampleInputPassword1"
+											name="password" type="password" placeholder="Password"
+											th:field="*{password}" required="required" />
+									</div>
+									<div class="col-md-6">
+										<label for="exampleConfirmPassword">Confirm password</label> <input
+											class="form-control" id="exampleConfirmPassword"
+											name="cnfPassword" type="password"
+											placeholder="Confirm password" th:field="*{cnfPassword}"
+											required="required" />
+									</div>
+								</div>
+							</div>
+							<!-- <a class="btn btn-primary btn-block" href="login.html">Register</a> -->
+							<button type="submit" class="btn btn-primary btn-block">Register</button>
+						</fieldset>
+					</form>
+				</div>
+				<div></div>
+			</div>
+			<!-- /.container-fluid-->
+			<!-- /.content-wrapper-->
+			<footer class="sticky-footer">
+				<div class="container">
+					<div class="text-center">
+						<small>Copyright © Your Website 2017</small>
+					</div>
+				</div>
+			</footer>
+			<!-- Scroll to Top Button-->
+			<a class="scroll-to-top rounded" href="#page-top"> <i
+				class="fa fa-angle-up"></i>
+			</a>
+			<div th:include="fragments/header::js-include"></div>
+		</div>
+	</div>
+</body>
+</html>

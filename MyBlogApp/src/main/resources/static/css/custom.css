@@ -1,0 +1,178 @@
+@CHARSET "ISO-8859-1";
+
+.profile-img {
+	margin-top: -5px;
+	margin-right: 5px;
+	float: left;
+	background:
+		url(https://s3-eu-west-1.amazonaws.com/lynks-blog/wp-content/uploads/2016/10/11153439/rsz_1shutterstock_325243652.jpg)
+		50% 50% no-repeat; /* 50% 50% centers image in div */
+	background-size: auto 100%;
+	/* Interchange this value depending on prefering width vs. height */
+	width: 30px;
+	height: 30px;
+}
+
+.profile-pic {
+	border-radius: 50%;
+	height: 45px;
+	width: 45px;
+	background-size: cover;
+	background-position: center;
+	background-blend-mode: multiply;
+	vertical-align: middle;
+	text-align: center;
+	color: transparent;
+	transition: all .3s ease;
+	text-decoration: none;
+}
+
+.profile-pic:hover {
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 10000;
+	color: #fff;
+	transition: all .3s ease;
+	text-decoration: none;
+}
+
+.profile-pic span {
+	display: inline-block;
+	padding-top: 4.5em;
+	padding-bottom: 4.5em;
+}
+
+
+/******************** BLOG POST CSS **********************************/
+
+.btn-blog {
+    color: #ffffff;
+    background-color: #37d980;
+    border-color: #37d980;
+    border-radius:0;
+    margin-bottom:10px
+}
+.btn-blog:hover,
+.btn-blog:focus,
+.btn-blog:active,
+.btn-blog.active,
+.open .dropdown-toggle.btn-blog {
+    color: white;
+    background-color:#34ca78;
+    border-color: #34ca78;
+}
+ h2{color:#34ca78;}
+ .margin10{margin-bottom:10px; margin-right:10px;width:100px}
+ 
+ /**********************************************************************/ 
+ 
+ /******************** CONTACT US CSS **********************************/
+ 
+ .jumbotron {
+background: #358CCE;
+color: #FFF;
+border-radius: 0px;
+}
+.jumbotron-sm { padding-top: 24px;
+padding-bottom: 24px; }
+.jumbotron small {
+color: #FFF;
+}
+.h1 small {
+font-size: 24px;
+}
+
+ /******************************************************/ 
+
+ /*******************SOCIAL MEDIA ROUNDED BUTTON********/
+ 
+#social {
+  margin: 20px 10px;
+  text-align: center;
+}
+
+.smGlobalBtn { /* global button class */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border:2px solid #ddd; /* add border to the buttons */
+    box-shadow: 0 3px 3px #999;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 27px;
+    -moz-border-radius:27px;
+    -webkit-border-radius:27px;
+}
+
+/* facebook button class*/
+.facebookBtn{
+    background: #4060A5;
+}
+
+.facebookBtn:before{ /* use :before to add the relevant icons */
+    font-family: "FontAwesome";
+    content: "\f09a"; /* add facebook icon */
+}
+
+.facebookBtn:hover{
+    color: #4060A5;
+    background: #fff;
+    border-color: #4060A5; /* change the border color on mouse hover */
+}
+
+/* twitter button class*/
+.twitterBtn{
+    background: #00ABE3;
+}
+
+.twitterBtn:before{
+      font-family: "FontAwesome";
+      content: "\f099"; /* add twitter icon */
+      
+}
+
+.twitterBtn:hover{
+      color: #00ABE3;
+      background: #fff;
+      border-color: #00ABE3;
+}
+
+/* google plus button class*/
+.googleplusBtn{
+    background: #e64522;
+}
+
+.googleplusBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0d5"; /* add googleplus icon */
+}
+
+.googleplusBtn:hover{
+      color: #e64522;
+      background: #fff;
+      border-color: #e64522;
+}
+
+/* linkedin button class*/
+.linkedinBtn{
+    background: #0094BC;
+}
+
+.linkedinBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0e1"; /* add linkedin icon */
+}
+
+.linkedinBtn:hover{
+      color: #0094BC;
+      background: #fff;
+      border-color: #0094BC;
+}
+
+ /******************************************************/
